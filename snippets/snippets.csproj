@@ -60,22 +60,8 @@
     <Content Include="Angular-App.snippet" />
     <Content Include="AngularService.snippet" />
     <Content Include="AngularController.snippet" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JavaScript1.js" />
-    <Content Include="JavaScript2.js" />
-    <Content Include="JavaScript3.js" />
-    <Content Include="JavaScript4.js" />
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
