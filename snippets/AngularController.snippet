@@ -44,7 +44,7 @@
 	                    .controller('$ModuleName$Ctrl', $ModuleName$Ctrl);
 
                     config.$$inject= ['$$routeProvider'];
-                    patientsListCtrl.$$inject = [$DependenciesToInject$];
+                    $ModuleName$Ctrl.$$inject = [$DependenciesToInject$];
 
                     /////////////////////////////////
                     //CONFIG
@@ -52,7 +52,7 @@
 
                     function config ($$routeProvider) {
                       $$routeProvider.when('/$ModuleName$', {
-                        templateUrl: '$ModuleName$/$ModuleName$.html',
+                        templateUrl: 'Angular/$ModuleName$/$ModuleName$.html',
                         controller: '$ModuleName$Ctrl',
                         controllerAs: 'vm'
                       });
