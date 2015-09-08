@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Angular Service.js</Title>
+      <Description>Boilerplate for Angular Data Service</Description>
+      <Author>Nathan Ng</Author>
+      <Shortcut>NgDataService</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+
+
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>AppName</ID>
+          <ToolTip>Enter the App Name</ToolTip>
+          <Default>AppName</Default>
+        </Literal>
+        <Literal>
+          <ID>ServiceName</ID>
+          <ToolTip>Enter the Service Name</ToolTip>
+          <Default>ServiceName</Default>
+        </Literal>
+        <Literal>
+          <ID>apiRoute</ID>
+          <ToolTip>Enter the base Api Route</ToolTip>
+          <Default>BaseApiRoute</Default>
+        </Literal>
+        <Literal>
+          <ID>Resource</ID>
+          <ToolTip>Enter a resource Name</ToolTip>
+          <Default>Resource</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="Javascript" Kind="any">
+        <![CDATA[  'use strict';
+                    
+                    //inject service into app
+                    angular
+	                    .module('$AppName$')
+	                    .factory('$Resource$Service', $Resource$Service);
+
+
+                    function $Resource$Service() {
+                    
+                      var apiRoute = $apiRoute$;
+
+	                    return {
+		                    Get$Resource$:Get$Resource$,
+                        Post$Resource$:Post$Resource$
+	                    };
+                      
+                      
+                      //Get $Resource$
+	                    function Get$Resource$() {
+		                    return $$http.get(apiRoute + '/$Resource$').then(successCallback, failCallback);
+                        
+                        function successCallback(response){
+                        
+                          //Success callback code goes here
+                        
+                        };
+                        
+                        function failCallback(response) {
+                        
+                          //Fail callback code goes here
+                        
+                        };
+	                    }
+
+	                    //Post $Resource$
+                      function Post$Resource$() {
+		                    return $$http.post(apiRoute + '/$Resource$', postData).then(successCallback, failCallback);
+                        
+                        postData = {
+                          //Post Data goes here
+                        };
+                        
+                        function successCallback(response){
+                        
+                          //Success callback code goes here
+                        
+                        };
+                        
+                        function failCallback(response) {
+                        
+                          //Fail callback code goes here
+                        
+                        };
+	                    }
+                      
+                    }
+                    
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

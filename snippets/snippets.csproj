@@ -60,6 +60,9 @@
     <Content Include="Angular-App.snippet">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="AngularDataService.snippet">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="AngularService.snippet">
       <SubType>Designer</SubType>
     </Content>
