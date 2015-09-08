@@ -42,9 +42,10 @@
                     angular
 	                    .module('$AppName$')
 	                    .factory('$Resource$Service', $Resource$Service);
+                      
+                   $Resource$Service.$$inject = ['$http'];
 
-
-                    function $Resource$Service() {
+                    function $Resource$Service($http) {
                     
                       var apiRoute = '$apiRoute$';
 
