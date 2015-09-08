@@ -60,7 +60,11 @@
     <Content Include="Angular-App.snippet">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="JavaScript1.js" />
     <None Include="AngularDataService.snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AngularHttpGet.snippet">
       <SubType>Designer</SubType>
     </None>
     <Content Include="AngularService.snippet">
