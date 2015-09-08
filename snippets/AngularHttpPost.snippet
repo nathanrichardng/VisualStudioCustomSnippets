@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Angular Http POST Request</Title>
+      <Description>Inserts angular.http POST request</Description>
+      <Author>Nathan Ng</Author>
+      <Shortcut>NgPost</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+
+
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Endpoint</ID>
+          <ToolTip>Enter the Endpoint the request will be directed at</ToolTip>
+          <Default>api/endpoint</Default>
+        </Literal>
+        <Literal>
+          <ID>MethodName</ID>
+          <ToolTip>Enter the name of the method</ToolTip>
+          <Default>GetMethod</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="Javascript" Kind="any">
+        <![CDATA[  
+                      //Issue POST request to $Endpoint$
+	                    function $MethodName$() {
+                      
+                        var postData = {
+                          //postData goes here
+                        };
+		                    return $$http.Post('$Endpoint$', postData).then(successCallback, failCallback);
+                        
+                        
+                        function successCallback(response){
+                        
+                          //Success callback code goes here
+                        
+                        };
+                        
+                        function failCallback(response) {
+                        
+                          //Fail callback code goes here
+                        
+                        };
+	                    }
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

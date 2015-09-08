@@ -73,12 +73,13 @@
 
 	                    //Post $Resource$
                       function Post$Resource$() {
-		                    return $$http.post(apiRoute + '/$Resource$', postData).then(successCallback, failCallback);
-                        
-                        postData = {
+                      
+                        var postData = {
                           //Post Data goes here
                         };
+		                    return $$http.post(apiRoute + '/$Resource$', postData).then(successCallback, failCallback);
                         
+                                                
                         function successCallback(response){
                         
                           //Success callback code goes here
