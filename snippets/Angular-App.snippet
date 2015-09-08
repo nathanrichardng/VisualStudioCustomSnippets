@@ -5,7 +5,7 @@
       <Title>Angular App.js</Title>
       <Description>Instantiates the Angular app</Description>
       <Author>Nathan Ng</Author>
-      <Shortcut>AngularApp</Shortcut>
+      <Shortcut>NgApp</Shortcut>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
@@ -13,29 +13,49 @@
 
 
     <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>AppName</ID>
+          <ToolTip>Enter the App Name</ToolTip>
+          <Default>AppName</Default>
+        </Literal>
+        <Literal>
+          <ID>AppDependencies</ID>
+          <ToolTip>Enter the App Dependencies</ToolTip>
+          <Default>'ngRoute'</Default>
+        </Literal>
+        <Literal>
+          <ID>ControllerDependenciesToInject</ID>
+          <ToolTip>Enter the Controller Dependencies</ToolTip>
+          <Default>'ControllerDependency1'</Default>
+        </Literal>
+        <Literal>
+          <ID>ControllerDependenciesToUse</ID>
+          <ToolTip>Enter the Controller Dependencies</ToolTip>
+          <Default>ControllerDependency1</Default>
+        </Literal>
+      </Declarations>
       <Code Language="Javascript" Kind="any">
-        <![CDATA[
-
-                    'use strict';
+        <![CDATA[  'use strict';
 
                     // Declare app level module which depends on views, and components
                     angular
-	                    .module('AppName', [
-	                      'ngRoute'	                     
+	                    .module('$AppName$', [
+	                      $AppDependencies$	                     
 	                    ])
 	                    .config(config)
 	                    .controller('appCtrl', appCtrl);
 
                     config.$$inject = ['$$routeProvider'];
-                    appCtrl.$$inject = ['dependency1', 'dependency2'];
+                    appCtrl.$$inject = [$ControllerDependenciesToInject$];
 
                     function config($$routeProvider) {
 	                    $$routeProvider.otherwise({redirectTo: '/home'});
                     }
 
-                    function appCtrl(dependency1, dependency2) {
+                    function appCtrl($ControllerDependenciesToUse$) {
 	                    var vm = this;
-	                    vm.message = "Hello world!"
+	                    //Code Goes Here
                     }
                     
                 ]]>

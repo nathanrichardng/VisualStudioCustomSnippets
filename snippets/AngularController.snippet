@@ -5,7 +5,7 @@
       <Title>Angular Controller.js</Title>
       <Description>Boilerplate for Angular Controller</Description>
       <Author>Nathan Ng</Author>
-      <Shortcut>AngularController</Shortcut>
+      <Shortcut>NgController</Shortcut>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
@@ -13,35 +13,54 @@
 
 
     <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>AppName</ID>
+          <ToolTip>Enter the App Name</ToolTip>
+          <Default>AppName</Default>
+        </Literal>
+        <Literal>
+          <ID>ModuleName</ID>
+          <ToolTip>Enter the Module Name</ToolTip>
+          <Default>ModuleName</Default>
+        </Literal>
+        <Literal>
+          <ID>DependenciesToInject</ID>
+          <ToolTip>Enter the Module Dependencies</ToolTip>
+          <Default>Dependencies</Default>
+        </Literal>
+        <Literal>
+          <ID>DependenciesToUse</ID>
+          <ToolTip>Enter the Module Dependencies</ToolTip>
+          <Default>Dependencies</Default>
+        </Literal>
+      </Declarations>
       <Code Language="Javascript" Kind="any">
-        <![CDATA[
-        
-        
-                    'use strict';
+        <![CDATA[  'use strict';
 
                     angular
-	                    .module('AppName.ModuleName', ['ngRoute'])
+	                    .module('$AppName$.$ModuleName$', ['ngRoute'])
 	                    .config(config)
-	                    .controller('ModuleNameCtrl', ModuleNameCtrl);
+	                    .controller('$ModuleName$Ctrl', $ModuleName$Ctrl);
 
                     config.$$inject= ['$$routeProvider'];
-                    patientsListCtrl.$$inject = ['genericService'];
+                    patientsListCtrl.$$inject = [$DependenciesToInject$];
 
                     /////////////////////////////////
                     //CONFIG
                     ////////////////////////////////
 
                     function config ($$routeProvider) {
-                      $$routeProvider.when('/ModuleName', {
-                        templateUrl: 'ModuleName/ModuleName.html',
-                        controller: 'ModuleNameCtrl',
+                      $$routeProvider.when('/$ModuleName$', {
+                        templateUrl: '$ModuleName$/$ModuleName$.html',
+                        controller: '$ModuleName$Ctrl',
                         controllerAs: 'vm'
                       });
                     }
 
-                    function patientsListCtrl(genericService) {
+                    function $ModuleName$Ctrl($DependenciesToUse$) {
 	                    var vm = this;
-	                    vm.message = "This is a controller";
+	                    //Code goes here
                     };
                     
                 ]]>

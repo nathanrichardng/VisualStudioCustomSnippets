@@ -57,9 +57,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular-App.snippet" />
-    <Content Include="AngularService.snippet" />
-    <Content Include="AngularController.snippet" />
+    <Content Include="Angular-App.snippet">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AngularService.snippet">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AngularController.snippet">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

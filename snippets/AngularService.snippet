@@ -5,7 +5,7 @@
       <Title>Angular Service.js</Title>
       <Description>Boilerplate for Angular Service</Description>
       <Author>Nathan Ng</Author>
-      <Shortcut>AngularService</Shortcut>
+      <Shortcut>NgService</Shortcut>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
@@ -13,32 +13,45 @@
 
 
     <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>AppName</ID>
+          <ToolTip>Enter the App Name</ToolTip>
+          <Default>AppName</Default>
+        </Literal>
+        <Literal>
+          <ID>ServiceName</ID>
+          <ToolTip>Enter the Service Name</ToolTip>
+          <Default>ServiceName</Default>
+        </Literal>
+        <Literal>
+          <ID>FirstMethod</ID>
+          <ToolTip>Enter a Method Name</ToolTip>
+          <Default>FirstMethod</Default>
+        </Literal>
+      </Declarations>
       <Code Language="Javascript" Kind="any">
-        <![CDATA[
-        
-        
-                    'use strict';
+        <![CDATA[  'use strict';
                     
                     //inject service into app
                     angular
-	                    .module('AppName')
-	                    .factory('genericService', genericService);
+	                    .module('$AppName$')
+	                    .factory('$ServiceName$', $ServiceName$);
 
 
-                    function genericService() {
+                    function $ServiceName$() {
 
 	                    return {
-		                    method1:method1,
-		                    method2: method2
+		                    $FirstMethod$:$FirstMethod$ //,
+                        //more method declarations go here
 	                    }
 
-	                    function method1() {
-		                    return "method 1 called";
+	                    function $FirstMethod$() {
+		                    //Code goes here
 	                    }
 
-	                    function method2() {
-		                    return "method 2 called";
-	                    }
+	                    //More methods go here
+                      
                     }
                     
                 ]]>
