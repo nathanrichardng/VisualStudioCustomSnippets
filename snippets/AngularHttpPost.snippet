@@ -30,15 +30,20 @@
                       //Issue POST request to $Endpoint$
 	                    function $MethodName$() {
                       
+                        var deferred = $$q.defer();
+                        
                         var postData = {
                           //postData goes here
                         };
-		                    return $$http.post('$Endpoint$', postData).then(successCallback, failCallback);
+		                    
+                        $$http.post('$Endpoint$', postData).then(successCallback, failCallback);
+                        return deferred.promise;
                         
                         
                         function successCallback(response){
                         
                           //Success callback code goes here
+                          deferred.resolve(response);
                         
                         };
                         

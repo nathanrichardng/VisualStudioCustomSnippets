@@ -29,12 +29,16 @@
         <![CDATA[  
                       //Issue GET request to $Endpoint$
 	                    function $MethodName$() {
-		                    return $$http.get('$Endpoint$').then(successCallback, failCallback);
+                        
+                        var deferred = $$q.defer();
+                        $$http.get('$Endpoint$').then(successCallback, failCallback);
+                        return deferred.promise;
+                        
                         
                         function successCallback(response){
                         
                           //Success callback code goes here
-                        
+                          deferred.resolve(response);
                         };
                         
                         function failCallback(response) {

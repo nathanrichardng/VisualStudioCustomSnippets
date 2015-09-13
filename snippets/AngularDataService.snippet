@@ -43,9 +43,9 @@
 	                    .module('$AppName$')
 	                    .factory('$Resource$Service', $Resource$Service);
                       
-                   $Resource$Service.$$inject = ['$http'];
+                   $Resource$Service.$$inject = ['$$http', '$$httpParamSerializer', '$$q'];
 
-                    function $Resource$Service($http) {
+                    function $Resource$Service($$http, $$httpParamSerializer, $$q) {
                     
                       var apiRoute = '$apiRoute$';
 
@@ -57,12 +57,19 @@
                       
                       //Get $Resource$
 	                    function Get$Resource$() {
-		                    return $$http.get(apiRoute + '/$Resource$').then(successCallback, failCallback);
+                      
+                        var deferred = $$q.defer();
+                        
+		                    $$http.get(apiRoute + '/$Resource$').then(successCallback, failCallback);
+                        
+                        return deferred.promise;
+                        
                         
                         function successCallback(response){
                         
                           //Success callback code goes here
-                        
+                          deferred.resolve(response);
+                          
                         };
                         
                         function failCallback(response) {
@@ -75,16 +82,21 @@
 	                    //Post $Resource$
                       function Post$Resource$() {
                       
+                        var deferred = $$q.defer();
+                        
                         var postData = {
                           //Post Data goes here
                         };
-		                    return $$http.post(apiRoute + '/$Resource$', postData).then(successCallback, failCallback);
+		                    
+                        $$http.post(apiRoute + '/$Resource$', postData).then(successCallback, failCallback);
                         
+                        return deferred.promise;
                                                 
                         function successCallback(response){
                         
                           //Success callback code goes here
-                        
+                          deferred.resolve(response);
+                          
                         };
                         
                         function failCallback(response) {
